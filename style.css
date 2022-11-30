@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+
+
+header {
+    padding-top: 20px;
+    
+}
+
+
+h1 {
+    text-align: center;
+
+}
+
+
+body {
+    display: grid;
+    row-gap: 50px;
+    background-image: url(imgs/kingdomComeWallpaper.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+main {
+    display: flex;
+    
+    height: 300px;
+    width: 620px;
+    gap: 20px;
+    margin: auto;
+    
+}
+
+
+
+.first-list {
+    display: flex;
+    height: 300px;
+    width: 340px;
+    justify-content: flex-end;
+    position: relative;
+    background-color: gainsboro;
+    gap: 46px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+    
+    
+}
+
+#btn-create-list {
+    display: flex;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 120px;
+    margin: auto;
+}
+
+
+.first-list  .main-buttons{
+    align-self: flex-end;
+    justify-content: start;
+    height: 22px;
+}
+
+.first-list  .list-buttons {
+    height: 22px;
+    justify-content: end;
+    align-self: flex-end;    
+}
+
+
+
+#unordered-list{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    font-size: 20px;
+    gap: 32px;    
+    width: 100%;    
+    padding-left: 7px;
+    
+    height: 13em;    
+    list-style: none;
+}
+
+
+[hide] {
+    background: none;
+}
+
+
+.first-list .after-save {
+    display: none;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 22px;
+}
+
+#edit {
+    cursor: pointer;
+}
+

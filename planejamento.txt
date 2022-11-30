@@ -1,0 +1,26 @@
+1 - pessoa irá digitar para qual dia da semana irá criar a lista
+2 - irá colocar as tarefas a serem cumpridas
+3 - irá poder alterar ou excluir as tarefas
+4 - irá poder marcar como concluida
+
+
+criar nova lista 
+- irá aparecer os dias da semana que a pessoa irá realizar
+
+-irá aparecer um campo para escrever as tarefas
+
+-quando estiver escrevendo no campo e apertar enter irá a tarefa ficará salva
+e o campo ficará vazio para a pessoa continuar adicionando tarefas se desejar
+
+-quando a pessoa clicar em salvar, ficará adicionada a lista mostrando os dias
+da semana que serão realizadas as tarefas, as tarefas em forma de li, e as opções
+de alterar, excluir e marcar a tarefa como concluida. e também ficará a opção de adiconar
+mais tarefas na lista já existente
+
+- a opção de criar nova lista irá permanecer independentemente se houver ou não uma lista
+já existente
+
+
+Pendentes:
+-ao criar uma outra lista, os botões serem transportados para a nova lista, e herdar as funcionalidades da lista já existente
+
