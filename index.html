@@ -14,28 +14,35 @@
         <h1>Lista de Tarefas</h1>
     </header>
     <main>
-        
-        <div class="first-list" test>
-            <div class="after-save">
-                <button id="edit">edit</button>
-                <button id="delete">Delete</button>
-                
-            </div>
-            <ul id="unordered-list" ></ul>
+
+        <div class="container">
 
             <div class="main-buttons" test hide>
-                <input itens type="text" id="task-input" placeholder="Digite as Tarefas" maxlength="25">
-                <button itens id="btn-add">+</button>                    
+                <form>
+                    <input itens type="text" id="task-input" placeholder="Digite as Tarefas" maxlength="27"
+                        autocomplete="off">
+                    <button itens id="btn-add">+</button>
+                </form>
             </div>
+
 
             <div class="list-buttons" test hide>
                 <button id="btn-cancel">x</button>
                 <button id="btn-save-list">✓</button>
-            </div>         
+            </div>
+            
         </div>
 
 
-        <button id="btn-create-list" shown>+</button>
+        <div class="edit-items">
+            <!-- <button id="btn-edit-list"></button> -->
+            <input id="btn-edit-list" type="image" src="/imgs/edit.png" >
+        </div>
+
+
+        <div class="create-list">
+            <button id="btn-create-list" shown>+</button>
+        </div>
 
     </main>
     <script src="script.js"></script>

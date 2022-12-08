@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Maximilian;
+    src: url(/fonts/Maximilian.ttf);
+}
+
 * {
     box-sizing: border-box;
     margin: 0px;
@@ -7,49 +12,82 @@
 
 header {
     padding-top: 20px;
-    
+
 }
 
 
 h1 {
     text-align: center;
-
+    font-family: Maximilian;
+    font-size: 50px;
+    font-weight: lighter;
+    text-shadow: 0px 0px 10px white;
 }
 
 
+
+
 body {
-    display: grid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     row-gap: 50px;
+    font: 20px/1.2 'IM Fell English', 'Georgia', serif;
     background-image: url(imgs/kingdomComeWallpaper.jpg);
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
     background-position: center center;
     background-attachment: fixed;
 }
 
+
+@media(min-height: 450px) {
+body {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    background-attachment: fixed;
+}
+}
+
+@media(max-width: 680px) {
+    body {
+        background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    }
+}
+
+
 main {
-    display: flex;
-    
-    height: 300px;
-    width: 620px;
-    gap: 20px;
     margin: auto;
-    
 }
 
 
 
+
 .first-list {
-    display: flex;
-    height: 300px;
-    width: 340px;
+
+    min-width: 20rem;
     justify-content: flex-end;
     position: relative;
+    box-shadow: cornflowerblue 0px 22px 70px 4px;
+    border: 2px solid black;
+    border-radius: 6px;
     background-color: gainsboro;
-    gap: 46px;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
     
-    
+}
+
+.container {
+    align-items: center;
+    justify-content: space-between;
+}
+
+form {
+    display: flex;
+    justify-content: flex-start;
 }
 
 #btn-create-list {
@@ -62,47 +100,66 @@ main {
 }
 
 
-.first-list  .main-buttons{
-    align-self: flex-end;
-    justify-content: start;
-    height: 22px;
+button,
+input {
+    height: 30px;
 }
 
-.first-list  .list-buttons {
-    height: 22px;
-    justify-content: end;
-    align-self: flex-end;    
+#task-input {
+
+    width: 210px;
+}
+
+input:focus {
+    outline: none;
 }
 
 
-
-#unordered-list{
+.list-buttons {
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
+}
+
+
+#btn-cancel,
+#btn-save-list {}
+
+/* 
+ul li {
+    width: 100%;
+    overflow: hidden;
+}
+
+ */
+.unordered-list {
     justify-content: flex-start;
     flex-direction: column;
-    font-size: 20px;
-    gap: 32px;    
-    width: 100%;    
-    padding-left: 7px;
-    
-    height: 13em;    
-    list-style: none;
+    text-align: left;
+    font-size: 1em;
+    gap: 27px;
+    width: 100%;
+    padding-left: 2px;
+    height: 13em;
+}
+
+li {
+    list-style: none;    
 }
 
 
-[hide] {
-    background: none;
+li::before {
+    content: '\00bb';
 }
 
 
-.first-list .after-save {
-    display: none;
+.edit-items {
     justify-content: flex-end;
-    align-items: flex-end;
-    height: 22px;
+
 }
 
-#edit {
-    cursor: pointer;
+#btn-edit-list {
+    height: 35px;
 }
 

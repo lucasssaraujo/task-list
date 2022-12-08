@@ -1,90 +1,157 @@
-const createListButton = document.getElementById('btn-create-list')
-const mainButtons = document.getElementsByClassName('main-buttons')
-const test = document.querySelectorAll('[test]')
-const taskInput = document.getElementById('task-input')
-const addButton = document.getElementById('btn-add')
-const testando = document.getElementById('testando')
-const cancelListButton = document.getElementById('btn-cancel')
-const saveListButton = document.getElementById('btn-save-list')
-const hide = document.querySelectorAll('[hide]')
-const unorderedList = document.getElementById('unordered-list')
-const firstList = document.querySelector('.first-list')
-const main = document.querySelector('main')
+createListButton = document.getElementById('btn-create-list')
+
+mainButtons = document.getElementsByClassName('main-buttons')
+
+test = document.querySelectorAll('[test]')
+
+taskInput = document.getElementById('task-input')
+addButton = document.getElementById('btn-add')
+testando = document.getElementById('testando')
+
+cancelListButton = document.getElementById('btn-cancel')
+saveListButton = document.getElementById('btn-save-list')
+
+hide = document.querySelectorAll('[hide]')
+
+
+
+main = document.querySelector('main')
+
+listButtons = document.querySelectorAll('.list-buttons')
+
+firstList = document.querySelector('.first-list')
+
+
+form = document.querySelector('form')
+
+container = document.querySelector('.container')
 
 
 
 
-function newElement(tagName, className) {
-    const elem = document.createElement(tagName)
-    elem.className = className
-    return elem
-}
+container.setAttribute('style', 'display: none')
+/* unorderedList.setAttribute('style', 'display: none') */
 
 
-test.forEach(e => e.setAttribute('style', 'display: none'))
+editItems = document.querySelector('.edit-items')
+editItems.setAttribute('style', 'display: none')
+btnEditList = document.getElementById('btn-edit-list')
+
+
 
 
 createListButton.addEventListener('click', () => {
-    test.forEach(e => e.setAttribute('style', 'display: flex'))
+
+    firstList = document.createElement('div')
+    firstList.className = 'first-list'
+
+    main.appendChild(firstList)
+
+    unorderedList = document.createElement('ul')
+    unorderedList.className = 'unordered-list'
+
+
+    firstList.appendChild(editItems)
+    firstList.appendChild(unorderedList)
+    firstList.appendChild(container)
+
+    container.setAttribute('style', 'display: flex')
+    unorderedList.setAttribute('style', 'display: flex')
+
     createListButton.setAttribute('style', 'display: none')
+
 }
 )
 
 
-addButton.addEventListener("click", function Add() {
-    if (document.querySelectorAll('#unordered-list li').length < 5 &&
-        taskInput.value.length >= 1) {
-        li = document.createElement('li')
-        li.innerHTML = taskInput.value
-        unorderedList.appendChild(li)
-        li.dataset.saved = 'false'
+taskInput.focus()
 
-    } else {
+
+form.addEventListener('submit', (elem) => {
+    elem.preventDefault()
+
+    Add()
+})
+
+
+function Add() {
+
+    if (document.querySelectorAll('.unordered-list li').length < 5) {
+
+        if (taskInput.value != '') {
+            li = document.createElement('li')
+            li.innerHTML = taskInput.value
+            unorderedList.appendChild(li)
+
+            taskInput.value = ''
+            taskInput.focus()
+        }
 
     }
-})
+}
+
+
+addButton.addEventListener("click", Add())
+
+
+cancelListButton.addEventListener('click', Remove)
+
+function Remove() {
+    li = unorderedList.getElementsByTagName('li')
+    last = li[li.length - 1]
+
+    unorderedList.removeChild(last)
+}
+
+/* let li = document.querySelector('li') */
+
+/* document.querySelector('data-unsaved').setAttribute('style', 'visibility: hidden') */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* test.forEach(e => e.setAttribute('style', 'display: none')) */
+
+
 
 
 saveListButton.addEventListener('click', () => {
 
-    hide.forEach(e => e.setAttribute('style', 'display: none;'))
-    firstList.dataset.saved = ''
+    if (document.querySelector('li')) {
 
-    li = document.querySelectorAll('li')
+        hide.forEach(e => e.setAttribute('style', 'display: none;'))
 
-li.forEach(e => e.dataset.saved = 'true')
+        editItems.setAttribute('style', 'display: flex')
 
-
-
-    if (firstList.hasAttribute('data-saved')) {
-        document.querySelector('.after-save').setAttribute('style', 'display: flex' )
-
-    } else {
-        console.log('erro')
+        /* firstList.setAttribute('style', 'box-shadow: none') */
     }
 })
 
 
 
 
-cancelListButton.addEventListener('click', () => {
-    li = document.querySelectorAll('li')
+btnEditList.addEventListener('click', () => {
 
-    if(document.querySelector('data-saved', 'true') == true) {
-        hide.forEach(e => e.setAttribute('style', 'display: none'))
-    } else{
-        console.log('erro')
-        test.forEach(e => e.setAttribute('style', 'display: none'))
-        createListButton.setAttribute('style', 'display: inline')
-    }
+    hide.forEach(e => e.setAttribute('style', 'display: flex'))
+
+    editItems.removeAttribute('style', 'display')
+    editItems.setAttribute('style', 'display: none')
+
+    firstList.removeAttribute('style', 'box-shadow')
+
 })
 
 
-editButton = document.getElementById('edit')
 
-editButton.addEventListener('click', () => {
-test.forEach(e => e.setAttribute('style', 'display: flex'))
-})
 
 
 
