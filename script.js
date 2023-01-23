@@ -30,7 +30,6 @@ container = document.querySelector('.container')
 
 
 container.setAttribute('style', 'display: none')
-/* unorderedList.setAttribute('style', 'display: none') */
 
 
 editItems = document.querySelector('.edit-items')
@@ -41,7 +40,6 @@ btnEditList = document.getElementById('btn-edit-list')
 
 
 createListButton.addEventListener('click', () => {
-
     firstList = document.createElement('div')
     firstList.className = 'first-list'
 
@@ -49,7 +47,6 @@ createListButton.addEventListener('click', () => {
 
     unorderedList = document.createElement('ul')
     unorderedList.className = 'unordered-list'
-
 
     firstList.appendChild(editItems)
     firstList.appendChild(unorderedList)
@@ -59,7 +56,6 @@ createListButton.addEventListener('click', () => {
     unorderedList.setAttribute('style', 'display: flex')
 
     createListButton.setAttribute('style', 'display: none')
-
 }
 )
 
@@ -69,15 +65,12 @@ taskInput.focus()
 
 form.addEventListener('submit', (elem) => {
     elem.preventDefault()
-
     Add()
 })
 
 
 function Add() {
-
     if (document.querySelectorAll('.unordered-list li').length < 5) {
-
         if (taskInput.value != '') {
             li = document.createElement('li')
             li.innerHTML = taskInput.value
@@ -86,7 +79,6 @@ function Add() {
             taskInput.value = ''
             taskInput.focus()
         }
-
     }
 }
 
@@ -99,40 +91,16 @@ cancelListButton.addEventListener('click', Remove)
 function Remove() {
     li = unorderedList.getElementsByTagName('li')
     last = li[li.length - 1]
-
     unorderedList.removeChild(last)
 }
-
-/* let li = document.querySelector('li') */
-
-/* document.querySelector('data-unsaved').setAttribute('style', 'visibility: hidden') */
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* test.forEach(e => e.setAttribute('style', 'display: none')) */
 
 
 
 
 saveListButton.addEventListener('click', () => {
-
     if (document.querySelector('li')) {
-
         hide.forEach(e => e.setAttribute('style', 'display: none;'))
-
         editItems.setAttribute('style', 'display: flex')
-
-        /* firstList.setAttribute('style', 'box-shadow: none') */
     }
 })
 
@@ -140,14 +108,10 @@ saveListButton.addEventListener('click', () => {
 
 
 btnEditList.addEventListener('click', () => {
-
     hide.forEach(e => e.setAttribute('style', 'display: flex'))
-
     editItems.removeAttribute('style', 'display')
     editItems.setAttribute('style', 'display: none')
-
     firstList.removeAttribute('style', 'box-shadow')
-
 })
 
 
